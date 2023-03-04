@@ -4,7 +4,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: none;
-    box-shadow: inset 0rem -20vh 3rem rgba(20, 20, 20, 1);
+    box-shadow: inset 0rem -20vh 4rem rgba(20, 20, 20, 1);
 }
 
 .left {
@@ -72,7 +72,7 @@
     }
 
     .banner-container .left{
-        top: 30vh;
+        top: 25vh;
         width: fit-content;
         gap: 5px;
         height: fit-content;

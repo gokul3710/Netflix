@@ -37,3 +37,9 @@ footer i{
     margin-top: 1rem;
     font-size: 0.7rem;
 }
+
+@media screen and (max-width:599px) {
+    .footer-links{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
