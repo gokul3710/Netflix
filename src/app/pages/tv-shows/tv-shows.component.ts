@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TmdbService } from '../../services/tmdb.service';
 import { SeriesService } from '../../services/series.service';
-TmdbService
-SeriesService
+import { TVShowModel } from '../../models/tvshows';
+
 
 @Component({
   selector: 'app-tv-shows',
@@ -11,13 +11,17 @@ SeriesService
 })
 export class TvShowsComponent implements OnInit {
 
-  popularSeries: any
-  topRatedSeries: any
-  airingTodaySeries: any
+  popularSeries: TVShowModel[]
+  topRatedSeries: TVShowModel[]
+  airingTodaySeries: TVShowModel[]
 
-  constructor(private tmdbService:TmdbService, private seriesService: SeriesService) { }
+  constructor(private seriesService: SeriesService) { 
+    this.popularSeries = []
+    this.topRatedSeries = []
+    this.airingTodaySeries = []
+  }
 
-  ngOnInit(): void {
+  ngOnInit() {
       this.handlePopularSeries()
       this.handleTopRatedSeries()
       this.handleArrivingTodaySeries()

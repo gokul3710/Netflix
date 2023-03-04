@@ -16,6 +16,10 @@ export class TmdbService {
   getTrending(): Observable<any> {
     return this.http.get(`${this.baseurl}/trending/all/week?api_key=${this.apikey}`); 
   }
+
+  getSearch(data: string): Observable<any>{
+    return this.http.get(`${this.baseurl}/search/movie?api_key=${this.apikey}&query=${data}`);
+  }
   
 }
 

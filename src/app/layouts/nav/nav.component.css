@@ -63,28 +63,30 @@ nav{
     display: none;
 }
 
-/* .search-button{
+.search-button{
     display: flex;
-    align-items: center;
-    height: 2rem;
-    background: black;
-    padding: 0 10px;
-} */
-/* 
-.search-button form{
+}
+
+form{
+    background-color: rgba(0, 0, 0, 0.689);
+    border: 1px solid white;
+    padding: 0.3rem 0.4rem;
     display: flex;
     gap: 1rem;
     align-items: center;
+    opacity: 0;
 }
 
-.search-button form input{
+form input{
     height: 1.5rem;
+    width: 0rem;
     background-color: transparent;
     color: white;
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 0 5px;
     font-weight: 400;
-} */
+    transition: width 300ms ease;
+} 
 
 
 /* img{

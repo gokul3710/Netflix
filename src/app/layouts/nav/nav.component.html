@@ -13,7 +13,11 @@
             </ul>
             <div class="buttons">
                 <div class="search-button">
-                    <button ><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <form #searchForm   #form="ngForm" >
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input (change)="handleSearch(form,formInput)" #formInput type="text" placeholder="Titles, people, genres">
+                    </form>
+                    <button (click)="formChange()" *ngIf="!formActive"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
                 <div class="notification-button not-mobile">
                     <button><i class="fa-regular fa-bell"></i></button>

@@ -14,6 +14,11 @@ import { BannerComponent } from './components/banner/banner.component';
 import { CardSingleComponent } from './components/card-single/card-single.component';
 import { TvShowsComponent } from './pages/tv-shows/tv-shows.component';
 import { MoviesComponent } from './pages/movies/movies.component';
+import { SearchComponent } from './pages/search/search.component';
+
+
+//forms
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,12 +29,15 @@ import { MoviesComponent } from './pages/movies/movies.component';
     BannerComponent,
     CardSingleComponent,
     TvShowsComponent,
-    MoviesComponent
+    MoviesComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

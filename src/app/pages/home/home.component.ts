@@ -1,7 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { TmdbService } from '../../services/tmdb.service';
 import { MoviesService } from '../../services/movies.service';
 import { SeriesService } from '../../services/series.service';
+import { MovieModel } from '../../models/movies';
+import { TVShowModel } from '../../models/tvshows';
+import { TvShowsComponent } from '../tv-shows/tv-shows.component';
+
+
 
 
 @Component({
@@ -9,120 +14,128 @@ import { SeriesService } from '../../services/series.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit,DoCheck {
 
-  trending: any
+  trending: (MovieModel | TVShowModel)[]
 
   //movies
-  nowPlayingMovies: any
-  popularMovies: any
-  topRatedMovies: any
-  actionMovies: any
-  animationMovies: any
-  adventureMovies: any
+  nowPlayingMovies: MovieModel[]
+  popularMovies: MovieModel[]
+  topRatedMovies: MovieModel[]
+  actionMovies: MovieModel[]
+  animationMovies: MovieModel[]
+  adventureMovies: MovieModel[]
 
 
   //series
-  popularSeries: any
-  topRatedSeries: any
-  airingTodaySeries: any
+  popularSeries: TVShowModel[]
+  topRatedSeries: TVShowModel[]
+  airingTodaySeries: TVShowModel[]
 
-  constructor(private tmdbService:TmdbService, private movieService: MoviesService, private seriesService:SeriesService){}
-
-  ngOnInit(): void {
-      this.handleTrending()
-      this.handleNowPlayingMovies()
-      this.handlePopularMovies()
-      this.handleTopRatedMovies()
-      this.handleActionMovies()
-      this.handleAdventureMovies()
-      this.handleAnimjationMovies()
-      this.handlePopularSeries()
-      this.handleTopRatedSeries()
-      this.handleArrivingTodaySeries()
+  constructor(private tmdbService: TmdbService, private movieService: MoviesService, private seriesService: SeriesService) {
+    this.trending = []
+    this.nowPlayingMovies = []
+    this.popularMovies = []
+    this.topRatedMovies = []
+    this.actionMovies = []
+    this.animationMovies = []
+    this.adventureMovies = []
+    this.popularSeries = []
+    this.topRatedSeries = []
+    this.airingTodaySeries = []
   }
 
-  handleTrending(){
+  ngOnInit(): void {
+    this.handleTrending()
+    this.handleNowPlayingMovies()
+    this.handlePopularMovies()
+    this.handleTopRatedMovies()
+    this.handleActionMovies()
+    this.handleAdventureMovies()
+    this.handleAnimationMovies()
+    this.handlePopularSeries()
+    this.handleTopRatedSeries()
+    this.handleArrivingTodaySeries()
+  }
+
+  ngDoCheck(): void {
+  }
+
+  handleTrending() {
     this.tmdbService.getTrending().subscribe(
-      (data)=>{
+      (data) => {
         this.trending = data.results
-        console.log(this.trending);
-        
       }
     )
   }
 
-  handleNowPlayingMovies(){
+  handleNowPlayingMovies() {
     this.movieService.nowPlaying().subscribe(
-      (data)=>{
+      (data) => {
         this.nowPlayingMovies = data.results
       }
     )
   }
 
-  handlePopularMovies(){
+  handlePopularMovies() {
     this.movieService.popular().subscribe(
-      (data)=>{
+      (data) => {
         this.popularMovies = data.results
       }
     )
   }
 
-  handleTopRatedMovies(){
+  handleTopRatedMovies() {
     this.movieService.topRated().subscribe(
-      (data)=>{
+      (data) => {
         this.topRatedMovies = data.results
       }
     )
   }
-  handleActionMovies(){
+  handleActionMovies() {
     this.movieService.action().subscribe(
-      (data)=>{
+      (data) => {
         this.actionMovies = data.results
       }
     )
   }
 
-
-  handleAdventureMovies(){
+  handleAdventureMovies() {
     this.movieService.adventure().subscribe(
-      (data)=>{
+      (data) => {
         this.adventureMovies = data.results
       }
     )
   }
 
-  handleAnimjationMovies(){
+  handleAnimationMovies() {
     this.movieService.animation().subscribe(
-      (data)=>{
+      (data) => {
         this.animationMovies = data.results
       }
     )
   }
 
-  handlePopularSeries(){
+  handlePopularSeries() {
     this.seriesService.popular().subscribe(
-      (data)=>{
+      (data) => {
         this.popularSeries = data.results
-        console.log(this.popularSeries);
-        
       }
     )
   }
 
-  handleTopRatedSeries(){
+  handleTopRatedSeries() {
     this.seriesService.topRated().subscribe(
-      (data)=>{
+      (data) => {
         this.topRatedSeries = data.results
-        
       }
     )
   }
 
-  handleArrivingTodaySeries(){
+  handleArrivingTodaySeries() {
     this.seriesService.airingToday().subscribe(
-      (data)=>{
-        this.airingTodaySeries = data.results 
+      (data) => {
+        this.airingTodaySeries = data.results
       }
     )
   }

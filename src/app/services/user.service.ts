@@ -5,5 +5,16 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
+  private searchString: string = ''
+
   constructor() { }
+
+  set search(val: string){
+    this.searchString = val
+  }
+
+  get search(){
+    return this.searchString
+  }
+  
 }

@@ -1,0 +1,8 @@
+<div class="search-container trending">
+    <h5>Search Results for {{search}} : </h5>
+    <div class="container">
+        <ng-container *ngFor="let movie of trending">
+            <app-card-single [movie]="movie"></app-card-single>
+        </ng-container>
+    </div>
+</div>

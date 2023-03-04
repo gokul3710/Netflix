@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
-import { TmdbService } from 'src/app/services/tmdb.service';
-import { SeriesService } from '../../services/series.service';
+import { MovieModel } from '../../models/movies';
 
 @Component({
   selector: 'app-movies',
@@ -11,21 +10,33 @@ import { SeriesService } from '../../services/series.service';
 export class MoviesComponent {
 
   //movies
-  trendingMovies: any
-  nowPlayingMovies: any
-  popularMovies: any
-  topRatedMovies: any
-  actionMovies: any
-  animationMovies: any
-  adventureMovies: any
-  comedyMovies: any
-  documentaryMovies: any
-  scienceFictionMovies: any
-  thrillerMovies: any
+  trendingMovies: MovieModel[]
+  nowPlayingMovies: MovieModel[]
+  popularMovies: MovieModel[]
+  topRatedMovies: MovieModel[]
+  actionMovies: MovieModel[]
+  animationMovies: MovieModel[]
+  adventureMovies: MovieModel[]
+  comedyMovies: MovieModel[]
+  documentaryMovies: MovieModel[]
+  scienceFictionMovies: MovieModel[]
+  thrillerMovies: MovieModel[]
 
-  constructor(private movieService: MoviesService) { }
+  constructor(private movieService: MoviesService) { 
+    this.trendingMovies = []
+    this.nowPlayingMovies = []
+    this.popularMovies = []
+    this.topRatedMovies = []
+    this.actionMovies = []
+    this.animationMovies = []
+    this.adventureMovies = []
+    this.comedyMovies = []
+    this.documentaryMovies = []
+    this.scienceFictionMovies = []
+    this.thrillerMovies = []
+  }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.handleTrendingMovies()
     this.handleNowPlayingMovies()
     this.handlePopularMovies()
