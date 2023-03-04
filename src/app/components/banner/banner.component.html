@@ -1,0 +1,15 @@
+<section class="banner">
+    <div [style.background-image]="'url(' + link + ')'" class="banner-container">
+        <div class="left">
+            <a class="banner-logo">{{movie.name || movie.title}}</a>
+            <p class="not-mobile">
+                {{movie.overview}}
+            </p>
+            <div class="buttons">
+                <a href="https://www.netflix.com/watch/80114790?trackId=255824129&tctx=0%2C0%2CNAPA%40%40%7C1cade6b8-3211-42bc-b99c-08bb17ce6c13-12566424_titles%2F1%2F%2Fdark%2F0%2F0%2CNAPA%40%40%7C1cade6b8-3211-42bc-b99c-08bb17ce6c13-12566424_titles%2F1%2F%2Fdark%2F0%2F0%2Cunknown%2C%2C1cade6b8-3211-42bc-b99c-08bb17ce6c13-12566424%7C1%2CtitlesResults%2C%2CVideo%3A80100172"  class="play btn"><i class="fa-solid fa-play"></i>Play</a>
+                <a class="info btn not-mobile"><i class="fa-solid fa-info"></i>More Info</a>
+                <a class="info btn mobile"><i class="fa-solid fa-info"></i></a>
+            </div>
+        </div>
+    </div>
+</section>

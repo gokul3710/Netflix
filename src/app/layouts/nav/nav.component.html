@@ -1,0 +1,27 @@
+<nav [ngClass]="{'scrolled': isScrolled}">
+    <div class="nav-container container">
+        <a routerLink="" class="logo"><img src="../../../assets/images/logo.png" alt=""></a>
+        <div class="navigation">
+            <ul class="permalinks">
+                <li class="permalink active"><i class="fa-solid fa-house mobile"></i><a [routerLink]="''">Home</a></li>
+                <li class="permalink"><i class="fa-solid fa-tv mobile"></i><a [routerLink]="'tv'">TV Shows</a></li>
+                <li class="permalink"><i class="fa-solid fa-film mobile"></i><a [routerLink]="'movies'">Movies</a></li>
+                <li class="permalink"><i class="fa-solid fa-star mobile"></i><a [routerLink]="''">Popular</a></li>
+                <li class="permalink mobile"><i class="fa-solid fa-user mobile"></i><a>Account</a></li>
+                <li class="permalink not-mobile"><a>My List</a></li>
+                <li class="permalink not-mobile"><a>Browse by Languages</a></li>
+            </ul>
+            <div class="buttons">
+                <div class="search-button">
+                    <button ><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="notification-button not-mobile">
+                    <button><i class="fa-regular fa-bell"></i></button>
+                </div>
+                <div class="account-button not-mobile">
+                    <button><img src="../../../assets/avatars/avatar1.png" alt=""></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
