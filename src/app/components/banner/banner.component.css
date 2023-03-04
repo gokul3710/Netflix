@@ -72,8 +72,8 @@
     }
 
     .banner-container .left{
-        top: 20vh;
-        width: 100%;
+        top: 30vh;
+        width: fit-content;
         gap: 5px;
         height: fit-content;
     }
