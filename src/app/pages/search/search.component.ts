@@ -4,6 +4,7 @@ import { MoviesService } from '../../services/movies.service';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import { TmdbService } from '../../services/tmdb.service';
+import { TVShowModel } from 'src/app/models/tvshows';
 
 @Component({
   selector: 'app-search',
@@ -20,32 +21,39 @@ export class SearchComponent implements OnInit,DoCheck,OnChanges {
   }
 
   
-  ngOnInit(): void {
+  ngOnInit() {
+      this.search =  this.userService.getSearch()
       this.handleSearch()
-      this.search = this.userService.search
-
   }
 
-  ngDoCheck(): void {
+  ngDoCheck() {
       if(this.search == ""){
         this.router.navigateByUrl('/')
       }
-      this.search = this.userService.search
+      if(this.search != this.userService.getSearch() ){
+        this.search = this.userService.getSearch()
+        this.handleSearch()
+      }
   }
 
   ngOnChanges(){
-    this.tmdbService.getSearch(this.search).subscribe(
-      (data)=>{
-        this.trending = data.results
-      }
-    )
+    this.handleSearch()
   }
 
   handleSearch(){
     this.tmdbService.getSearch(this.search).subscribe(
       (data)=>{
+        console.log(data.results);
         this.trending = data.results
       }
     )
+  }
+
+  
+  hasBackdropPath(movie: MovieModel | TVShowModel | null): boolean{
+    if(movie?.backdrop_path){
+      return true
+    }
+    return false
   }
 }

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+// import { SearchComponent } from './pages/search/search.component';
+import { UserService } from './services/user.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Netflix';
+
+  constructor(private userService: UserService){}
+  
+  handleEvent($event: string){
+    console.log($event);
+    this.userService.setSearch($event)
+  }
 }

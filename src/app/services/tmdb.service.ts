@@ -18,6 +18,8 @@ export class TmdbService {
   }
 
   getSearch(data: string): Observable<any>{
+    console.log(data);
+    
     return this.http.get(`${this.baseurl}/search/movie?api_key=${this.apikey}&query=${data}`);
   }
   

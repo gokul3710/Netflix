@@ -6,11 +6,12 @@
     overflow: hidden;
     cursor: pointer;
     border-radius: 0.5rem;
+    height: 8rem;
 }
 
 .movie-card img {
     width: auto;
-    height: 8rem;
+    height: 100%;
     border-radius: 0.2rem;
     transition: transform 0.5s ease;
 }

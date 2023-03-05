@@ -10,7 +10,7 @@ import { TVShowModel } from '../../models/tvshows';
 export class CardSingleComponent implements OnInit {
 
   @Input() movie :  MovieModel | TVShowModel | null 
-  link: string = "https://image.tmdb.org/t/p/w500/"
+  link: string = ""
   title: string  =  ""
 
   constructor(){
@@ -18,7 +18,7 @@ export class CardSingleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.link = this.link + this.movie!["backdrop_path"]
+    this.link = 'https://image.tmdb.org/t/p/w500/' + this.movie!["backdrop_path"]
     this.title = this.getTitleOrName(this.movie)
   }
 

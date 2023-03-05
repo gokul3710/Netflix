@@ -9,11 +9,11 @@ export class UserService {
 
   constructor() { }
 
-  set search(val: string){
+  setSearch(val: string){
     this.searchString = val
   }
 
-  get search(){
+  getSearch(){
     return this.searchString
   }
   
