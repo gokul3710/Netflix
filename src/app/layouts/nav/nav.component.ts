@@ -55,6 +55,10 @@ export class NavComponent implements OnInit {
         this.formActive = !this.formActive;
       }, 200)
     }
+  }
 
+  handleLogout(){
+    this.userService.logout()
+    this.router.navigateByUrl('/login')
   }
 }

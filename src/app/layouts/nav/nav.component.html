@@ -7,7 +7,7 @@
                 <li [routerLink]="'tv'" class="permalink"><i class="fa-solid fa-tv mobile"></i><a>TV Shows</a></li>
                 <li [routerLink]="'movies'" class="permalink"><i class="fa-solid fa-film mobile"></i><a>Movies</a></li>
                 <li [routerLink]="''" class="permalink"><i class="fa-solid fa-star mobile"></i><a>Popular</a></li>
-                <li class="permalink mobile"><i class="fa-solid fa-user mobile"></i><a>Account</a></li>
+                <li (click)="handleLogout()" class="permalink mobile"><i class="fa-solid fa-right-from-bracket mobile"></i><a>Logout</a></li>
                 <li class="permalink not-mobile"><a>My List</a></li>
                 <li class="permalink not-mobile"><a>Browse by Languages</a></li>
             </ul>
@@ -23,7 +23,7 @@
                     <button><i class="fa-regular fa-bell"></i></button>
                 </div>
                 <div class="account-button not-mobile">
-                    <button><img src="../../../assets/avatars/avatar1.png" alt=""></button>
+                    <button (click)="handleLogout()"><img src="../../../assets/avatars/avatar1.png" alt=""></button>
                 </div>
             </div>
         </div>

@@ -17,4 +17,8 @@ export class AppComponent {
     console.log($event);
     this.userService.setSearch($event)
   }
+
+  isLoggedIn(){
+    return this.userService.isLoggedIn()
+  }
 }

@@ -19,6 +19,11 @@ import { SearchComponent } from './pages/search/search.component';
 
 //forms
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './pages/login/login.component';
+import { UserService } from './services/user.service';
+import { TmdbService } from './services/tmdb.service';
+import { MoviesService } from './services/movies.service';
+import { SeriesService } from './services/series.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CardSingleComponent,
     TvShowsComponent,
     MoviesComponent,
-    SearchComponent
+    SearchComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UserService,TmdbService,MoviesService,SeriesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

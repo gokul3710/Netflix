@@ -63,6 +63,10 @@ nav{
     display: none;
 }
 
+ul.permalinks li.mobile{
+    display: none;
+}
+
 .search-button{
     display: flex;
 }
@@ -127,16 +131,15 @@ form input{
     .navigation ul li a{
         font-size: 0.5rem;
     }
-    
-    .not-mobile{
-        display: none;
-    }
 
+    .not-mobile,
     .navigation ul li.not-mobile{
         display: none;
     }
 
-    .mobile{
+
+    .mobile,
+    ul.permalinks li.mobile{
         display: block;
     }
     
