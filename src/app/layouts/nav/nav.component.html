@@ -3,9 +3,9 @@
         <a routerLink="''" class="logo"><img src="../../../assets/images/logo.png" alt=""></a>
         <div class="navigation">
             <ul class="permalinks">
-                <li [routerLink]="''" class="permalink active"><i class="fa-solid fa-house mobile"></i><a>Home</a></li>
-                <li [routerLink]="'tv'" class="permalink"><i class="fa-solid fa-tv mobile"></i><a>TV Shows</a></li>
-                <li [routerLink]="'movies'" class="permalink"><i class="fa-solid fa-film mobile"></i><a>Movies</a></li>
+                <li [routerLink]="''" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}" class="permalink"><i class="fa-solid fa-house mobile"></i><a>Home</a></li>
+                <li [routerLink]="'tv'" [routerLinkActive]="'active'" class="permalink"><i class="fa-solid fa-tv mobile"></i><a>TV Shows</a></li>
+                <li [routerLink]="'movies'" [routerLinkActive]="'active'" class="permalink"><i class="fa-solid fa-film mobile"></i><a>Movies</a></li>
                 <li [routerLink]="''" class="permalink"><i class="fa-solid fa-star mobile"></i><a>Popular</a></li>
                 <li (click)="handleLogout()" class="permalink mobile"><i class="fa-solid fa-right-from-bracket mobile"></i><a>Logout</a></li>
                 <li class="permalink not-mobile"><a>My List</a></li>

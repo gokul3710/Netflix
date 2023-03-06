@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 import { MovieModel } from '../../models/movies';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
   styleUrls: ['../home/home.component.css']
 })
-export class MoviesComponent {
+export class MoviesComponent implements OnInit {
 
   //movies
   trendingMovies: MovieModel[]

@@ -47,8 +47,8 @@ nav{
     font-weight: 400;
 }
 
-.navigation ul li a.active{
-    font-weight: 500;
+.navigation ul li.active a{
+    font-weight: 600;
 }
 
 .buttons i{

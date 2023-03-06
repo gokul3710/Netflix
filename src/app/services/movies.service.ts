@@ -62,4 +62,19 @@ export class MoviesService {
     return this.http.get(`${this.tmdb.baseurl}/discover/movie?api_key=${this.tmdb.apikey}&with_genres=53`);
   }
 
+  // getmoviedatails
+  getMovieDetails(data: any): Observable<any> {
+    return this.http.get(`${this.tmdb.baseurl}/movie/${data}?api_key=${this.tmdb.apikey}`)
+  }
+
+  // getMovieVideo
+  getMovieVideo(data: any): Observable<any> {
+    return this.http.get(`${this.tmdb.baseurl}/movie/${data}/videos?api_key=${this.tmdb.apikey}`)
+  }
+
+  // getMovieCast
+  getMovieCast(data: any): Observable<any> {
+    return this.http.get(`${this.tmdb.baseurl}/movie/${data}/credits?api_key=${this.tmdb.apikey}`)
+  }
+
 }
