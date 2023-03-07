@@ -4,6 +4,9 @@
     background-position: center;
     background-size: cover;
     background-repeat: none;
+}
+
+.banner-shadow{
     box-shadow: inset 0rem -20vh 4rem rgba(20, 20, 20, 1);
 }
 

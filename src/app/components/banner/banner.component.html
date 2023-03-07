@@ -1,5 +1,5 @@
 <section class="banner">
-    <div [style.background-image]="'url(' + link + ')'" class="banner-container">
+    <div [style.background-image]="'url(' + link + ')'" class="banner-container" [ngClass]="{'banner-shadow': shadow}">
         <div class="left">
             <a class="banner-logo">{{title}}</a>
             <p class="not-mobile">

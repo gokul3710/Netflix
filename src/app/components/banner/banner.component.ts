@@ -10,6 +10,7 @@ import { TVShowModel } from 'src/app/models/tvshows';
 export class BannerComponent implements DoCheck {
 
   @Input() movie: MovieModel | TVShowModel | null
+  @Input() shadow: boolean = true
   link: string = ""
   title: string = ""
 

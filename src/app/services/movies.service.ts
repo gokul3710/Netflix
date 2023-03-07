@@ -63,18 +63,18 @@ export class MoviesService {
   }
 
   // getmoviedatails
-  getMovieDetails(data: any): Observable<any> {
-    return this.http.get(`${this.tmdb.baseurl}/movie/${data}?api_key=${this.tmdb.apikey}`)
+  movie(movieId: string ): Observable<any> {
+    return this.http.get(`${this.tmdb.baseurl}/movie/${movieId}?api_key=${this.tmdb.apikey}`)
   }
 
   // getMovieVideo
-  getMovieVideo(data: any): Observable<any> {
+  movieVideo(data: any): Observable<any> {
     return this.http.get(`${this.tmdb.baseurl}/movie/${data}/videos?api_key=${this.tmdb.apikey}`)
   }
 
   // getMovieCast
-  getMovieCast(data: any): Observable<any> {
-    return this.http.get(`${this.tmdb.baseurl}/movie/${data}/credits?api_key=${this.tmdb.apikey}`)
+  movieCast(movieId: string ): Observable<any> {
+    return this.http.get(`${this.tmdb.baseurl}/movie/${movieId}/credits?api_key=${this.tmdb.apikey}`)
   }
 
 }

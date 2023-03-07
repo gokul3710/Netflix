@@ -24,6 +24,8 @@ import { UserService } from './services/user.service';
 import { TmdbService } from './services/tmdb.service';
 import { MoviesService } from './services/movies.service';
 import { SeriesService } from './services/series.service';
+import { MovieComponent } from './pages/movie/movie.component';
+import { CastComponent } from './components/cast/cast.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { SeriesService } from './services/series.service';
     TvShowsComponent,
     MoviesComponent,
     SearchComponent,
-    LoginComponent
+    LoginComponent,
+    MovieComponent,
+    CastComponent
   ],
   imports: [
     BrowserModule,

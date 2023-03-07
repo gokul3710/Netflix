@@ -1,0 +1,131 @@
+section{
+    padding: 0 4%;
+}
+
+section h2{
+    margin: 2rem 0;
+    color: white;
+    font-size: 1.7rem;
+}
+
+.team-container{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+}
+
+.team-member{
+    padding: 0.5rem;
+    background-color: red;
+    overflow: hidden;
+    border: 1px solid transparent;
+    transition: all 300ms ease;
+    position: relative;
+    border-radius: 1rem 0 1rem 0;
+}
+
+.team-member:hover{
+    background: transparent;
+    border-color: red;
+}
+
+.team-member:hover .team-member-info p,
+.team-member:hover .team-member-info h4{
+    color: white;
+}
+
+.team-member-image img{
+    filter: saturate(0.7);
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 1rem 0 1rem 0;
+    transition: all 300ms ease;
+}
+
+.team-member:hover .team-member-image img{
+    filter:saturate(1);
+    scale: 1.1;
+}
+
+.team-member-info{
+    text-align: center;
+    margin-top: 1.4rem;
+}
+
+.team-member-info p{
+    color: black;
+    font-size: 0.8rem;
+}
+
+.team-member-socials{
+    position: absolute;
+    top: 50%;
+    right: -100%;
+    display: flex;
+    flex-direction: column;
+    background: red;
+    border-radius: 1rem 0 0 1rem;
+    transform: translateY(-50%);
+    box-shadow: -2rem 0 2rem rgba(0, 0, 0, 0.3);
+    transition: all 300ms ease;
+}
+
+.team-member-socials a{
+    padding: 1rem;
+}
+
+.team-member:hover .team-member-socials{
+    right: 0;
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+    .achievements{
+        margin-top: 2rem;
+    }
+
+    .achievements-container{
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .achievements-left{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .team-container{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .team-member{
+        padding: 1rem;
+    }
+
+    @media screen and (max-width: 600px) {
+        .team-container{
+            grid-template-columns: 1fr 1fr;
+            gap: 0.7rem;
+        }
+
+        .team-member{
+            padding: 0;
+        }
+
+        .team-member p{
+            margin-bottom: 1.5rem;
+        }
+
+        .team-member-info h4{
+            font-size: 1rem;
+        }
+
+        .team-member-info p{
+            font-size: 0.8rem;
+        }
+    }
+}

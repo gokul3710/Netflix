@@ -45,6 +45,13 @@ export class CardSingleComponent implements OnInit {
     }    
     throw new Error("Object is not of type MovieModel or TVShowModel");
   }
+
+  getLink(movie: MovieModel| TVShowModel | null): string{
+    if(movie != null){
+      return '/movie/' + movie.id
+    }
+    return ''
+  }
   
 
 
