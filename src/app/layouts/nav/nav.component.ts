@@ -45,7 +45,7 @@ export class NavComponent implements OnInit {
     }
   }
 
-  searched() {
+  searchTextChanged() {
     this.event.emit(this.searchString)
     this.router.navigateByUrl('/search')
     if (!this.searchString) {

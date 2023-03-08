@@ -15,7 +15,7 @@
                 <div class="search-button">
                     <form #form="ngForm" #searchForm   >
                         <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                        <input (change)="searched()" #formInput name="formInput" [(ngModel)]="searchString" type="text" placeholder="Titles, people, genres">
+                        <input (input)="searchTextChanged()" #formInput name="formInput" [(ngModel)]="searchString" type="text" placeholder="Titles, people, genres">
                     </form>
                     <button (click)="formChange()" *ngIf="!formActive"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>

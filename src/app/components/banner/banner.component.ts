@@ -39,4 +39,11 @@ export class BannerComponent implements DoCheck {
     }  
     return ''  
   }
+
+  getLink(movie: MovieModel| TVShowModel | null): string{
+    if(movie != null){
+      return '/movie/' + movie.id
+    }
+    return ''
+  }
 }
