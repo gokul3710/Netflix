@@ -110,6 +110,7 @@ form input{
         background-color: #141414;
         width: 100vw;
         place-items: center;
+        box-shadow: 1rem 1rem 1rem 0.5rem rgba(255, 255, 255, 0.689);
     }
 
     .navigation ul li a,

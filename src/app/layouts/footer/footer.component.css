@@ -42,4 +42,8 @@ footer i{
     .footer-links{
         grid-template-columns: repeat(2,1fr);
     }
+
+    footer{
+        padding-bottom: 4rem;
+    }
 }
