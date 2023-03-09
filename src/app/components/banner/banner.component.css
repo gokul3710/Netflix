@@ -6,7 +6,7 @@
     background-repeat: none;
 }
 
-.banner-shadow{
+.banner-shadow {
     box-shadow: inset 0rem -20vh 4rem rgba(20, 20, 20, 1);
 }
 
@@ -14,9 +14,13 @@
     margin-left: 4%;
     position: absolute;
     width: 36%;
-    bottom: 20%;
+    bottom: 0%;
     display: grid;
     gap: 1rem;
+}
+
+.banner-shadow .left{
+    bottom: 20%;
 }
 
 .left .banner-logo {
@@ -57,53 +61,61 @@
     color: black;
 }
 
-.mobile{
+.mobile {
     display: none;
 }
 
 @media screen and (max-width: 599px) {
     .banner-container {
         height: 50vh;
+        background-position: top;
     }
 
-    .not-mobile{
+    .not-mobile {
         display: none;
     }
 
-    .mobile{
+    .mobile {
         display: block;
     }
 
-    .banner-container .left{
+    .banner-container .left {
+        top: 35vh;
+        width: fit-content;
+        gap: 5px;
+        height: fit-content;
+    }
+
+    .banner-shadow .left {
         top: 25vh;
         width: fit-content;
         gap: 5px;
         height: fit-content;
     }
 
-    .banner-container .left .banner-logo{
+    .banner-container .left .banner-logo {
         font-size: 1.5rem;
     }
 
-    .banner-container .left .buttons{
+    .banner-container .left .buttons {
         gap: 0.5rem;
     }
 
-    .banner-container .left .btn{
+    .banner-container .left .btn {
         padding: 0.4rem 1rem;
         font-size: 0.7rem;
         border-radius: 0.5rem;
     }
 
-    .banner-container .left .buttons a{
+    .banner-container .left .buttons a {
         font-weight: 600;
     }
 
-    .banner-container .left .btn i{
+    .banner-container .left .btn i {
         margin-right: 5px;
     }
 
-    .banner-container .left .buttons .mobile{
+    .banner-container .left .buttons .mobile {
         border-radius: 50%;
         padding: 0.5rem;
         display: flex;

@@ -14,21 +14,27 @@ export class BannerComponent implements DoCheck {
   link: string = ""
   title: string = ""
 
-  constructor(){
+  constructor() {
     this.movie = null
   }
 
   ngDoCheck(): void {
     this.title = this.getTitleOrName(this.movie)
-    this.link = "https://image.tmdb.org/t/p/original/" + this.movie?.backdrop_path
+
+    if (window.innerWidth > 599) {
+      this.link = "https://image.tmdb.org/t/p/original/" + this.movie?.backdrop_path
+    }else{
+      this.link = "https://image.tmdb.org/t/p/original/" + this.movie?.poster_path
+
+    }
   }
-  
+
   isMovieModel(obj: any): obj is MovieModel {
-    return obj && typeof obj.title === "string" ;
+    return obj && typeof obj.title === "string";
   }
-  
+
   isTVShowModel(obj: any): obj is TVShowModel {
-    return obj && typeof obj.name === "string" ;
+    return obj && typeof obj.name === "string";
   }
 
   getTitleOrName(obj: MovieModel | TVShowModel | null): string {
@@ -36,12 +42,12 @@ export class BannerComponent implements DoCheck {
       return obj.title;
     } else if (this.isTVShowModel(obj)) {
       return obj.name;
-    }  
-    return ''  
+    }
+    return ''
   }
 
-  getLink(movie: MovieModel| TVShowModel | null): string{
-    if(movie != null){
+  getLink(movie: MovieModel | TVShowModel | null): string {
+    if (movie != null) {
       return '/movie/' + movie.id
     }
     return ''
