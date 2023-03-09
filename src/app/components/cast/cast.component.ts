@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CastComponent implements OnInit {
 
-  @Input() cast: any 
+  @Input() member: any 
 
   constructor(){}
 

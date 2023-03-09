@@ -1,5 +1,5 @@
 <div class="movie-cards">
-    <div class="movie-card">
+    <div class="movie-card" [ngClass]="{'custom': size == 'custom'}">
         <img class="card-img" [src]="link" alt="">
         <div class="layer">
             <h3>{{title}}</h3>

@@ -6,9 +6,9 @@
         <div class="login-container">
             <div class="login-form">
                 <h1>Sign In</h1>
-                <form #loginForm="ngForm" (ngSubmit)="handleLogin(loginForm)">
-                    <input [(ngModel)]="user.email" type="email" name="email" placeholder="Email Address">
-                    <input [(ngModel)]="user.password" type="password" name="password" placeholder="Password">
+                <form [formGroup]="user" (ngSubmit)="handleLogin()">
+                    <input formControlName='email' type="email" name="email" placeholder="Email Address">
+                    <input formControlName='password' type="password" name="password" placeholder="Password">
                     <button type="submit">Sign In</button>
                 </form>
                 <div class="help">

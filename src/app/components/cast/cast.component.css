@@ -1,18 +1,4 @@
-section{
-    padding: 0 4%;
-}
 
-section h2{
-    margin: 2rem 0;
-    color: white;
-    font-size: 1.7rem;
-}
-
-.team-container{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 2rem;
-}
 
 .team-member{
     padding: 0.5rem;
@@ -83,49 +69,27 @@ section h2{
 
 
 @media screen and (max-width: 1024px) {
-    .achievements{
-        margin-top: 2rem;
-    }
-
-    .achievements-container{
-        grid-template-columns: 1fr;
-        gap: 4rem;
-    }
-
-    .achievements-left{
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    .team-container{
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-    }
 
     .team-member{
         padding: 1rem;
     }
+}
 
-    @media screen and (max-width: 600px) {
-        .team-container{
-            grid-template-columns: 1fr 1fr;
-            gap: 0.7rem;
-        }
+@media screen and (max-width: 600px) {
+    
+    .team-member{
+        padding: 0;
+    }
 
-        .team-member{
-            padding: 0;
-        }
+    .team-member p{
+        margin-bottom: 1.5rem;
+    }
 
-        .team-member p{
-            margin-bottom: 1.5rem;
-        }
+    .team-member-info h4{
+        font-size: 1rem;
+    }
 
-        .team-member-info h4{
-            font-size: 1rem;
-        }
-
-        .team-member-info p{
-            font-size: 0.8rem;
-        }
+    .team-member-info p{
+        font-size: 0.8rem;
     }
 }

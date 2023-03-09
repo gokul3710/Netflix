@@ -85,6 +85,26 @@
     height: 100%;
 }
 
+@media screen and (max-width:599px) {
+    .custom{
+        width: 45vw;
+        height: auto;
+    }
+
+    .custom img{
+        width: 100%;
+        height: fit-content;
+    }
+
+    .custom .layer h3{
+        font-size: 0.8rem;
+    }
+
+    .custom .layer span p{
+        display: none;
+    }
+}
+
 
 
 

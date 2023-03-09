@@ -3,7 +3,7 @@
     <div class="container">
         <ng-container *ngFor="let movie of trending">
             <ng-container *ngIf="hasBackdropPath(movie)">
-                <app-card-single [movie]="movie"></app-card-single>
+                <app-card-single [movie]="movie" [size]="'custom'"></app-card-single>
             </ng-container>
         </ng-container>
     </div>

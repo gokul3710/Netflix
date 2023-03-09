@@ -10,6 +10,7 @@ import { TVShowModel } from '../../models/tvshows';
 export class CardSingleComponent implements OnInit {
 
   @Input() movie :  MovieModel | TVShowModel | null 
+  @Input() size: "custom" | "auto" = "auto"
   link: string = ""
   title: string  =  ""
 

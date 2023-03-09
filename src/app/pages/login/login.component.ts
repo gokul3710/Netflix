@@ -1,10 +1,8 @@
-import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { userModel } from 'src/app/models/user';
 import { Router } from '@angular/router';
-NgForm
-UserService
 
 
 @Component({
@@ -12,17 +10,30 @@ UserService
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
 
-  user: userModel = {
-    email: '',
-    password: ''
+  // user: userModel = {
+  //   email: '',
+  //   password: ''
+  // }
+
+  user: any
+
+  constructor(private userService: UserService, private router: Router, private formBuilder: FormBuilder){}
+
+  ngOnInit(): void {
+       
+    this.user = this.formBuilder.group({
+      email : ['',[Validators.required,Validators.email]],
+      password : ['',[Validators.required,Validators.minLength(6)]]
+    })
+
   }
 
-  constructor(private userService: UserService, private router: Router){}
-
-  handleLogin(data: NgForm){
-    let logged = this.userService.login(this.user)
+  handleLogin(){
+    console.log(this.user.value);
+    
+    let logged = this.userService.login(this.user.value)
     if(logged){
       this.router.navigateByUrl('/')
     }
