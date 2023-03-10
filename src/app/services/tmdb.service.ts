@@ -8,8 +8,8 @@ import { environment } from '../../environment/environment';
 })
 export class TmdbService {
   
-  readonly baseurl = environment.url ?? process.env['BASE_URL']
-  readonly apikey = environment.api ?? process.env['API']
+  readonly baseurl = process.env['BASE_URL'] ?? environment.url 
+  readonly apikey = process.env['API'] ?? environment.api 
 
   constructor(private http:HttpClient) { }
 
