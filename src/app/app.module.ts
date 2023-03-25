@@ -26,6 +26,8 @@ import { MoviesService } from './services/movies.service';
 import { SeriesService } from './services/series.service';
 import { MovieComponent } from './pages/movie/movie.component';
 import { CastComponent } from './components/cast/cast.component';
+import { ScrollResetDirective } from './scroll-reset.directive';
+import { ShowComponent } from './pages/show/show.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { CastComponent } from './components/cast/cast.component';
     SearchComponent,
     LoginComponent,
     MovieComponent,
-    CastComponent
+    CastComponent,
+    ScrollResetDirective,
+    ShowComponent
   ],
   imports: [
     BrowserModule,

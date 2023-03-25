@@ -1,15 +1,14 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../../environment/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TmdbService {
   
-  readonly baseurl = process.env['BASE_URL'] ?? environment.url 
-  readonly apikey = process.env['API'] ?? environment.api 
+  readonly baseurl = "https://api.themoviedb.org/3";
+  readonly apikey = "08cc33bd5ae3a747598ce2ad84376e66";
 
   constructor(private http:HttpClient) { }
 

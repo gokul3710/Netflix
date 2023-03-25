@@ -8,10 +8,12 @@ import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { LoginGuard } from './guards/login.guard';
 import { MovieComponent } from './pages/movie/movie.component';
+import { ShowComponent } from './pages/show/show.component';
 
 const routes: Routes = [
   {path: "", component: HomeComponent, canActivate: [AuthGuard]},
   {path: "movie/:id", component: MovieComponent, canActivate: [AuthGuard]},
+  {path: "show/:id", component: ShowComponent, canActivate: [AuthGuard]},
   {path: "tv", component: TvShowsComponent, canActivate: [AuthGuard]},
   {path: "movies",component: MoviesComponent, canActivate: [AuthGuard] },
   {path: "search",component: SearchComponent, canActivate: [AuthGuard] },

@@ -68,12 +68,12 @@ export class MoviesService {
   }
 
   // getMovieVideo
-  movieVideo(data: any): Observable<any> {
+  video(data: any): Observable<any> {
     return this.http.get(`${this.tmdb.baseurl}/movie/${data}/videos?api_key=${this.tmdb.apikey}`)
   }
 
   // getMovieCast
-  movieCast(movieId: string ): Observable<any> {
+  cast(movieId: string ): Observable<any> {
     return this.http.get(`${this.tmdb.baseurl}/movie/${movieId}/credits?api_key=${this.tmdb.apikey}`)
   }
 

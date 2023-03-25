@@ -28,13 +28,18 @@ export class NavComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
-    if (window.innerWidth > 599)
-      this.isScrolled = window.pageYOffset > 0;
+    this.isScrolled = window.pageYOffset > 0;
+    if (!this.searchString){
+      this.formInput!.nativeElement.style.width = '0';
+      setTimeout(() => {
+        this.form!.nativeElement.style.opacity = "0"
+        this.formActive = false;
+      }, 220)
+    }
   }
 
   formChange() {
     this.formActive = !this.formActive;
-
     if (this.formInput !== null) {
       if (window.innerWidth > 599){
         this.formInput.nativeElement.style.width = '15rem';
@@ -48,13 +53,13 @@ export class NavComponent implements OnInit {
   searchTextChanged() {
     this.event.emit(this.searchString)
     this.router.navigateByUrl('/search')
-    if (!this.searchString) {
-      this.formInput!.nativeElement.style.width = '0';
-      setTimeout(() => {
-        this.form!.nativeElement.style.opacity = "0"
-        this.formActive = !this.formActive;
-      }, 200)
-    }
+    // if (!this.searchString) {
+    //   this.formInput!.nativeElement.style.width = '0';
+    //   setTimeout(() => {
+    //     this.form!.nativeElement.style.opacity = "0"
+    //     this.formActive = !this.formActive;
+    //   }, 200)
+    // }
   }
 
   handleLogout(){

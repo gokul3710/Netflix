@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MoviesService } from '../../services/movies.service';
 import { MovieModel } from '../../models/movies';
 import { TVShowModel } from '../../models/tvshows';
+import { SeriesService } from '../../services/series.service';
 
 @Component({
   selector: 'app-movie',
@@ -12,12 +13,10 @@ import { TVShowModel } from '../../models/tvshows';
 export class MovieComponent implements OnInit {
 
   movieId: string | null = ''
-  movie: MovieModel | TVShowModel | null;
+  movie!: MovieModel;
   cast: any
 
-  constructor(private route: ActivatedRoute, private movieService: MoviesService) {
-    this.movie = null
-  }
+  constructor(private route: ActivatedRoute, private movieService: MoviesService, private seriesService: SeriesService) {}
 
   ngOnInit(): void {
     this.getParams()
@@ -47,7 +46,7 @@ export class MovieComponent implements OnInit {
 
   getCast(id: string | null) {
     if (id) {
-      this.movieService.movieCast(id).subscribe(
+      this.movieService.cast(id).subscribe(
         (cast) => {
           console.log(cast);
           this.cast = cast

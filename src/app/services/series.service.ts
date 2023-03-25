@@ -23,4 +23,12 @@ export class SeriesService {
     return this.http.get(`${this.tmdb.baseurl}/tv/airing_today?api_key=${this.tmdb.apikey}`);
   }
 
+  show(showId: string ): Observable<any> {
+    return this.http.get(`${this.tmdb.baseurl}/tv/${showId}?api_key=${this.tmdb.apikey}`)
+  }
+
+  cast(showId: string ): Observable<any> {
+    return this.http.get(`${this.tmdb.baseurl}/tv/${showId}/credits?api_key=${this.tmdb.apikey}`)
+  }
+
 }

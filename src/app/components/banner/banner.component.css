@@ -1,6 +1,6 @@
 .banner-container {
     height: 110vh;
-    background-image: url(../../../assets/images/dark.jpg);
+    background-color: #141414;
     background-position: center;
     background-size: cover;
     background-repeat: none;
