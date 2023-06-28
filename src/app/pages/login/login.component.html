@@ -5,7 +5,7 @@
     <div class="login-cover">
         <div class="login-container">
             <div class="login-form">
-                <h1>Sign In</h1>
+                <h1>Sign In <br><p>email: user@netflix.com</p><br><p>password: 123</p></h1>
                 <form [formGroup]="user" (ngSubmit)="handleLogin()">
                     <input formControlName='email' type="email" name="email" placeholder="Email Address">
                     <input formControlName='password' type="password" name="password" placeholder="Password">
